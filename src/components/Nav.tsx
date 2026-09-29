@@ -24,7 +24,8 @@ export default function Nav() {
     <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav__inner">
       <a href="#" className="nav__logo">
-        <Image src="/logo.png" alt="Hunthreads" width={100} height={32} priority style={{ height: 'auto' }} />
+        <Image src="/logo.png" alt="Hunthreads" width={100} height={32} priority style={{ height: 'auto' }} className="logo--dark" />
+        <Image src="/logo-black.png" alt="Hunthreads" width={100} height={32} priority style={{ height: 'auto' }} className="logo--light" />
       </a>
 
       <ul className={`nav__links${open ? ' open' : ''}`}>

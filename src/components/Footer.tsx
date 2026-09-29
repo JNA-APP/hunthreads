@@ -5,7 +5,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <Image src="/logo.png" alt="Hunthreads" width={130} height={42} style={{ height: 'auto', marginBottom: '8px' }} />
+          <Image src="/logo.png" alt="Hunthreads" width={130} height={42} style={{ height: 'auto', marginBottom: '8px' }} className="logo--dark" />
+          <Image src="/logo-black.png" alt="Hunthreads" width={130} height={42} style={{ height: 'auto', marginBottom: '8px' }} className="logo--light" />
           <p className="footer__tagline">TATTOO × BARBER × MERCH</p>
           <p className="footer__copy">&copy; {new Date().getFullYear()} Hunthreads. All rights reserved.</p>
         </div>

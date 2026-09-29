@@ -85,6 +85,12 @@ body {
 }
 
 img { display: block; max-width: 100%; }
+
+/* Theme-aware logo switching */
+:root                  .logo--light { display: none; }
+[data-theme="dark"]    .logo--light { display: none; }
+[data-theme="light"]   .logo--dark  { display: none; }
+[data-theme="light"]   .logo--light { display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; }

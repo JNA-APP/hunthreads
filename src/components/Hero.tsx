@@ -12,10 +12,6 @@ export default async function Hero() {
 
   return (
     <section className="hero" id="home">
-      <div className="hero__logo-wrap" aria-hidden="true">
-        <Image src="/logo.png" alt="" width={600} height={192} style={{ width: '100%', height: 'auto' }} />
-      </div>
-
       <div className="hero__content">
         <div className="hero__pair">
           <div className="hero__mascot-wrap">

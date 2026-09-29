@@ -17,13 +17,11 @@ export default async function Hero() {
       </div>
 
       <div className="hero__content">
-        <p className="hero__eyebrow">{eyebrow}</p>
-
         <div className="hero__pair">
           <div className="hero__mascot-wrap">
             <Image src={mascotSrc} alt="Hunthreads mascot" fill priority
-              sizes="(max-width: 768px) 80vw, 40vw"
-              style={{ objectFit: 'contain', objectPosition: 'bottom center' }} />
+              sizes="(max-width: 768px) 90vw, 65vw"
+              style={{ objectFit: 'contain', objectPosition: 'center' }} />
           </div>
         </div>
 
@@ -35,6 +33,8 @@ export default async function Hero() {
             </span>
           ))}
         </p>
+
+        <p className="hero__eyebrow">{eyebrow}</p>
       </div>
 
       <div className="hero__scroll-hint" aria-hidden="true">

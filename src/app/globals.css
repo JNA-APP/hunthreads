@@ -293,7 +293,7 @@ button { cursor: pointer; border: none; background: none; }
   letter-spacing: 6px;
   text-transform: uppercase;
   color: var(--olive-light);
-  margin-bottom: clamp(24px, 4vh, 48px);
+  margin-top: clamp(12px, 2vh, 24px);
   text-align: center;
 }
 
@@ -302,7 +302,7 @@ button { cursor: pointer; border: none; background: none; }
   align-items: center;
   justify-content: center;
   gap: clamp(24px, 5vw, 64px);
-  margin-bottom: clamp(24px, 4vh, 48px);
+  margin-bottom: clamp(16px, 3vh, 32px);
 }
 
 .hero__logo-wrap {
@@ -318,11 +318,11 @@ button { cursor: pointer; border: none; background: none; }
 
 .hero__mascot-wrap {
   position: relative;
-  height: clamp(280px, 48vh, 480px);
-  aspect-ratio: 680/907;
+  width: clamp(340px, 68vw, 860px);
+  aspect-ratio: 17/12;
   flex-shrink: 0;
   pointer-events: none;
-  filter: drop-shadow(0 16px 48px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 16px 64px rgba(0,0,0,0.4));
 }
 
 .hero__tagline {
@@ -1472,7 +1472,7 @@ button { cursor: pointer; border: none; background: none; }
   /* Hero — single column stacked on mobile */
   .hero__content { padding: 100px 24px 40px; }
   .hero__pair { flex-direction: column; gap: 0; }
-.hero__mascot-wrap { height: clamp(200px, 40vh, 320px); }
+  .hero__mascot-wrap { width: clamp(280px, 90vw, 480px); }
   .hero__scroll-hint { bottom: 20px; }
 
   /* Sections */
@@ -1512,7 +1512,7 @@ button { cursor: pointer; border: none; background: none; }
   .footer__inner { padding: 40px 16px; }
   .footer__bottom { padding: 20px 16px; }
   .bts__featured-badge { font-size: 10px; padding: 4px 9px; }
-  .hero__mascot-wrap { height: clamp(160px, 36vh, 280px); }
+  .hero__mascot-wrap { width: clamp(240px, 88vw, 400px); }
   .hero__content { padding: 80px 16px 32px; }
 }
 

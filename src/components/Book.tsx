@@ -3,18 +3,28 @@
 import { useState, FormEvent } from 'react'
 
 export default function Book() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sent'>('idle')
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('sending')
-    setTimeout(() => {
-      setStatus('sent')
-      setTimeout(() => {
-        setStatus('idle')
-        ;(e.target as HTMLFormElement).reset()
-      }, 3000)
-    }, 1200)
+    const form = e.target as HTMLFormElement
+    const data = new FormData(form)
+
+    const name    = data.get('name')    as string
+    const email   = data.get('email')   as string
+    const service = data.get('service') as string
+    const message = data.get('message') as string
+
+    const subject = encodeURIComponent(`Booking Request — ${service}`)
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`
+    )
+
+    window.location.href = `mailto:arnelnueda006@gmail.com?subject=${subject}&body=${body}`
+
+    setStatus('sent')
+    form.reset()
+    setTimeout(() => setStatus('idle'), 4000)
   }
 
   return (
@@ -97,12 +107,10 @@ export default function Book() {
             </div>
             <button
               type="submit"
-              disabled={status !== 'idle'}
+              disabled={status === 'sent'}
               className={`form-submit${status === 'sent' ? ' form-submit--sent' : ''}`}
             >
-              {status === 'idle' && 'Send Booking Request'}
-              {status === 'sending' && 'Sending...'}
-              {status === 'sent' && 'Request Sent ✓'}
+              {status === 'idle' ? 'Send Booking Request' : 'Opening Email App ✓'}
             </button>
             <p className="form-note">We&#39;ll get back to you within 24 hours to confirm your slot.</p>
           </form>

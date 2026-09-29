@@ -1,0 +1,19 @@
+{
+  "tattooTitle": "Tattoo",
+  "tattooDesc": "Custom tattoo art in Central Luzon — black & grey realism, traditional flash, and cover-ups. Every piece is one of one, drawn for you and built to last.",
+  "tattooList": ["Custom Artwork", "Black & Grey Realism", "Traditional & Neo-Trad", "Cover-ups & Touch-ups"],
+  "tattooLinkLabel": "Book Consultation",
+  "tattooLinkHref": "#book",
+
+  "barberTitle": "Barber",
+  "barberDesc": "Precision fades, shape-ups, skin tapers, beard trims, and hot towel shaves. The best barber experience in Central Luzon — walk out looking sharp.",
+  "barberList": ["Skin & Mid Fades", "Shape-ups & Line-ups", "Beard Sculpt & Trim", "Hot Towel Shave"],
+  "barberLinkLabel": "Book Your Chair",
+  "barberLinkHref": "#book",
+
+  "merchTitle": "Merch",
+  "merchDesc": "Hunthreads drops — collectible designer toys, graphic tees, and more. Limited runs, no restocks. If you sleep, you miss.",
+  "merchList": ["Collectible Vinyl Figures", "Graphic Tees", "Tote Bags & Accessories", "Limited Drops Only"],
+  "merchLinkLabel": "Shop Now",
+  "merchLinkHref": "#merch"
+}

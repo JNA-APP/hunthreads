@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUNTHREADS — Tattoo × Barber × Merch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">HUNTHREADS</a>
+    <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#book" class="nav__cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg-text" aria-hidden="true">HUNTHREADS</div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">EST. 2024</p>
+      <h1 class="hero__title">HUNTHREADS</h1>
+      <p class="hero__tagline">TATTOO <span class="x">×</span> BARBER <span class="x">×</span> MERCH</p>
+      <p class="hero__sub">Sharp cuts. Bold ink. Authentic gear.One spot. One crew.</p>
+      <div class="hero__actions">
+        <a href="#book" class="btn btn--primary">Book a Session</a>
+        <a href="#work" class="btn btn--ghost">See Our Work</a>
+      </div>
+    </div>
+    <div class="hero__mascot">
+      <img src="mascot.jpg" alt="Hunthreads mascot" />
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>TATTOO</span><span class="dot">✦</span>
+      <span>BARBER</span><span class="dot">✦</span>
+      <span>MERCH</span><span class="dot">✦</span>
+      <span>CUSTOM INK</span><span class="dot">✦</span>
+      <span>FRESH CUTS</span><span class="dot">✦</span>
+      <span>STREET WEAR</span><span class="dot">✦</span>
+      <span>TATTOO</span><span class="dot">✦</span>
+      <span>BARBER</span><span class="dot">✦</span>
+      <span>MERCH</span><span class="dot">✦</span>
+      <span>CUSTOM INK</span><span class="dot">✦</span>
+      <span>FRESH CUTS</span><span class="dot">✦</span>
+      <span>STREET WEAR</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">THREE PILLARS.<br>ONE BRAND.</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card" data-index="01">
+          <div class="service-card__number">01</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 56L28 20l8 8L8 56z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M28 20l8-8 20 20-8 8-20-20z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="48" cy="12" r="4" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M14 50l4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Tattoo</h3>
+          <p class="service-card__desc">Custom designs, black & grey realism, traditional flash, and cover-ups. Every piece is one of one — drawn for you, built to last.</p>
+          <ul class="service-card__list">
+            <li>Custom Artwork</li>
+            <li>Black & Grey Realism</li>
+            <li>Traditional & Neo-Trad</li>
+            <li>Cover-ups & Touch-ups</li>
+          </ul>
+          <a href="#book" class="service-card__link">Book Consultation <span>→</span></a>
+        </div>
+
+        <div class="service-card service-card--accent" data-index="02">
+          <div class="service-card__number">02</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 12c0 0 4 4 4 10s-4 10-4 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M16 44h32M16 50h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="28" y="8" width="18" height="28" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M34 36v8M40 36v8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="22" cy="22" r="6" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Barber</h3>
+          <p class="service-card__desc">Precision fades, shape-ups, skin taper, beard trims and hot towel shaves. The chair don't lie — walk out looking sharp.</p>
+          <ul class="service-card__list">
+            <li>Skin & Mid Fades</li>
+            <li>Shape-ups & Line-ups</li>
+            <li>Beard Sculpt & Trim</li>
+            <li>Hot Towel Shave</li>
+          </ul>
+          <a href="#book" class="service-card__link">Book Your Chair <span>→</span></a>
+        </div>
+
+        <div class="service-card" data-index="03">
+          <div class="service-card__number">03</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8L12 20v36h40V20L44 8H20z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M20 8c0 6.627 5.373 12 12 12s12-5.373 12-12" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M24 38h16M24 46h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Merch</h3>
+          <p class="service-card__desc">Hunthreads drops — collectible designer toys, graphic tees, and fingerboards. Limited runs, no restocks. If you sleep, you miss.</p>
+          <ul class="service-card__list">
+            <li>Collectible Vinyl Figures</li>
+            <li>Graphic Tees</li>
+            <li>Fingerboards</li>
+            <li>Limited Drops Only</li>
+          </ul>
+          <a href="#merch" class="service-card__link">Shop Now <span>→</span></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / PORTFOLIO -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">THE WORK</h2>
+      </div>
+      <div class="work__tabs">
+        <button class="work__tab work__tab--active" data-tab="all">All</button>
+        <button class="work__tab" data-tab="tattoo">Tattoo</button>
+        <button class="work__tab" data-tab="barber">Barber</button>
+      </div>
+      <div class="work__grid" id="work-grid">
+        <div class="work__item" data-category="tattoo">
+          <div class="work__placeholder">
+            <span class="work__placeholder-label">TATTOO</span>
+            <span class="work__placeholder-num">01</span>
+          </div>
+          <div class="work__overlay"><span>Custom Sleeve</span></div>
+        </div>
+        <div class="work__item work__item--tall" data-category="barber">
+          <div class="work__placeholder work__placeholder--cyan">
+            <span class="work__placeholder-label">BARBER</span>
+            <span class="work__placeholder-num">02</span>
+          </div>
+          <div class="work__overlay"><span>Skin Fade</span></div>
+        </div>
+        <div class="work__item" data-category="tattoo">
+          <div class="work__placeholder work__placeholder--dark">
+            <span class="work__placeholder-label">TATTOO</span>
+            <span class="work__placeholder-num">03</span>
+          </div>
+          <div class="work__overlay"><span>Black & Grey</span></div>
+        </div>
+        <div class="work__item work__item--wide" data-category="tattoo">
+          <div class="work__placeholder work__placeholder--amber">
+            <span class="work__placeholder-label">TATTOO</span>
+            <span class="work__placeholder-num">04</span>
+          </div>
+          <div class="work__overlay"><span>Traditional Flash</span></div>
+        </div>
+        <div class="work__item" data-category="barber">
+          <div class="work__placeholder">
+            <span class="work__placeholder-label">BARBER</span>
+            <span class="work__placeholder-num">05</span>
+          </div>
+          <div class="work__overlay"><span>Line-up & Shape</span></div>
+        </div>
+        <div class="work__item" data-category="tattoo">
+          <div class="work__placeholder work__placeholder--dark">
+            <span class="work__placeholder-label">TATTOO</span>
+            <span class="work__placeholder-num">06</span>
+          </div>
+          <div class="work__overlay"><span>Cover-up</span></div>
+        </div>
+      </div>
+      <div class="work__cta">
+        <p>Want to see more? Hit us up on the socials.</p>
+        <div class="work__socials">
+          <a href="https://www.facebook.com/profile.php?id=61568755497348" target="_blank" rel="noopener" class="social-link">Facebook</a>
+          <a href="https://www.tiktok.com/@hunthreadscollection" target="_blank" rel="noopener" class="social-link">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCH SECTION -->
+  <section class="merch" id="merch">
+    <div class="merch__bg-text" aria-hidden="true">MERCH</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Limited Drops</span>
+        <h2 class="section-title">THE THREADS</h2>
+      </div>
+      <div class="merch__categories">
+
+        <!-- COLLECTIBLE TOYS -->
+        <div class="merch__category">
+          <div class="merch__category-header">
+            <span class="merch__category-num">01</span>
+            <div>
+              <h3 class="merch__category-title">Merch</h3>
+              <p class="merch__category-sub">Designer vinyl figures. Hand-painted. Limited run — no restocks.</p>
+            </div>
+            <span class="merch__badge merch__badge--cyan">COLLECTOR SERIES</span>
+          </div>
+          <div class="merch__row merch__row--4">
+            <div class="merch__card">
+              <div class="merch__img merch__img--photo merch__img--tall">
+                <img src="products/mech/2.jpg" alt="Hunthreads mascot figure colourways" />
+              </div>
+              <div class="merch__info">
+                <h4>Mascot Series — 5 Colourways</h4>
+                <p>Green, Red, Black, Cyan, Yellow — each hand-finished vinyl</p>
+                <span class="merch__price">Enquire</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--photo merch__img--tall">
+                <img src="products/mech/1.jpg" alt="Hunthreads figures at show" />
+              </div>
+              <div class="merch__info">
+                <h4>Show Display — Drop 01</h4>
+                <p>As seen at collector events and toy conventions</p>
+                <span class="merch__price">Enquire</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--photo merch__img--tall">
+                <span class="merch__badge merch__badge--amber">COLLAB</span>
+                <img src="products/mech/lab.jpg" alt="LAB313 x Hunthreads collab" />
+              </div>
+              <div class="merch__info">
+                <h4>LAB313 × Hunthreads</h4>
+                <p>6-figure collab series — limited colourways</p>
+                <span class="merch__price">Enquire</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--photo merch__img--tall">
+                <span class="merch__badge">NEW</span>
+                <img src="products/mech/tote.jpg" alt="Hunthreads mascot tote bag" />
+              </div>
+              <div class="merch__info">
+                <h4>Mascot Tote Bag</h4>
+                <p>Canvas, oversized mascot print, mascot charm</p>
+                <span class="merch__price">Enquire</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHIRTS -->
+        <div class="merch__category">
+          <div class="merch__category-header">
+            <span class="merch__category-num">02</span>
+            <div>
+              <h3 class="merch__category-title">Shirts</h3>
+              <p class="merch__category-sub">Heavy cotton, graphic prints. Wear what the crew wears.</p>
+            </div>
+            <span class="merch__badge">NEW DROP</span>
+          </div>
+          <div class="merch__row">
+            <div class="merch__card">
+              <div class="merch__img merch__img--olive">
+                <div class="merch__img-inner">
+                  <svg viewBox="0 0 120 120" fill="none">
+                    <path d="M35 20 L20 40 L35 44 L35 100 L85 100 L85 44 L100 40 L85 20 Q75 30 60 30 Q45 30 35 20Z" fill="#1C1C1C" stroke="#7A7B32" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="60" y="72" text-anchor="middle" fill="#7A7B32" font-size="9" font-family="Black Ops One, sans-serif" letter-spacing="1">HUNT</text>
+                    <text x="60" y="84" text-anchor="middle" fill="#7A7B32" font-size="9" font-family="Black Ops One, sans-serif" letter-spacing="1">THREADS</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Mascot Tee</h4>
+                <p>Oversized, 100% heavy cotton</p>
+                <span class="merch__price">₱35</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--dark">
+                <div class="merch__img-inner">
+                  <svg viewBox="0 0 120 120" fill="none">
+                    <path d="M35 20 L20 40 L35 44 L35 100 L85 100 L85 44 L100 40 L85 20 Q75 30 60 30 Q45 30 35 20Z" fill="#1C1C1C" stroke="#2BBECB" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="60" y="75" text-anchor="middle" fill="#2BBECB" font-size="8" font-family="Black Ops One, sans-serif" letter-spacing="1">HT CREW</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Crew Tee — Cyan</h4>
+                <p>Box fit, screen printed</p>
+                <span class="merch__price">₱35</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img">
+                <span class="merch__badge merch__badge--red">LIMITED</span>
+                <div class="merch__img-inner">
+                  <svg viewBox="0 0 120 120" fill="none">
+                    <path d="M35 20 L20 40 L35 44 L35 100 L85 100 L85 44 L100 40 L85 20 Q75 30 60 30 Q45 30 35 20Z" fill="#1C1C1C" stroke="#D4960A" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="60" y="75" text-anchor="middle" fill="#D4960A" font-size="7" font-family="Black Ops One, sans-serif" letter-spacing="1">TATTOO</text>
+                    <text x="60" y="86" text-anchor="middle" fill="#D4960A" font-size="7" font-family="Black Ops One, sans-serif" letter-spacing="1">BARBER</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Services Tee — Amber</h4>
+                <p>Vintage wash, distressed print</p>
+                <span class="merch__price">₱38</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINGERBOARDS -->
+        <div class="merch__category">
+          <div class="merch__category-header">
+            <span class="merch__category-num">03</span>
+            <div>
+              <h3 class="merch__category-title">Fingerboards</h3>
+              <p class="merch__category-sub">Custom decks, branded grip tape. Street culture runs deep here.</p>
+            </div>
+            <span class="merch__badge merch__badge--amber">CUSTOM</span>
+          </div>
+          <div class="merch__row">
+            <div class="merch__card">
+              <div class="merch__img merch__img--dark">
+                <div class="merch__img-inner merch__img-inner--board">
+                  <svg viewBox="0 0 60 180" fill="none">
+                    <rect x="8" y="10" width="44" height="160" rx="22" fill="#1C1C1C" stroke="#7A7B32" stroke-width="2"/>
+                    <rect x="14" y="30" width="32" height="120" rx="4" fill="#222" stroke="#7A7B32" stroke-width="1" stroke-dasharray="3 3"/>
+                    <text x="30" y="96" text-anchor="middle" fill="#7A7B32" font-size="6" font-family="Black Ops One, sans-serif" letter-spacing="0.5">HUNT</text>
+                    <text x="30" y="106" text-anchor="middle" fill="#7A7B32" font-size="5" font-family="Black Ops One, sans-serif" letter-spacing="0.5">THREADS</text>
+                    <circle cx="30" cy="24" r="5" fill="#333" stroke="#7A7B32" stroke-width="1"/>
+                    <circle cx="30" cy="156" r="5" fill="#333" stroke="#7A7B32" stroke-width="1"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Classic Deck</h4>
+                <p>5-ply maple, HT graphic</p>
+                <span class="merch__price">₱22</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--cyan">
+                <div class="merch__img-inner merch__img-inner--board">
+                  <svg viewBox="0 0 60 180" fill="none">
+                    <rect x="8" y="10" width="44" height="160" rx="22" fill="#0a2a2d" stroke="#2BBECB" stroke-width="2"/>
+                    <rect x="14" y="30" width="32" height="120" rx="4" fill="#0d3336" stroke="#2BBECB" stroke-width="1" stroke-dasharray="3 3"/>
+                    <text x="30" y="93" text-anchor="middle" fill="#2BBECB" font-size="6" font-family="Black Ops One, sans-serif" letter-spacing="0.5">MASCOT</text>
+                    <text x="30" y="103" text-anchor="middle" fill="#2BBECB" font-size="5" font-family="Black Ops One, sans-serif" letter-spacing="0.5">EDITION</text>
+                    <circle cx="30" cy="24" r="5" fill="#0d2a2d" stroke="#2BBECB" stroke-width="1"/>
+                    <circle cx="30" cy="156" r="5" fill="#0d2a2d" stroke="#2BBECB" stroke-width="1"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Mascot Edition Deck</h4>
+                <p>Cyan colourway, foil print</p>
+                <span class="merch__price">₱28</span>
+              </div>
+            </div>
+            <div class="merch__card">
+              <div class="merch__img merch__img--amber">
+                <span class="merch__badge merch__badge--red">SOLD OUT</span>
+                <div class="merch__img-inner merch__img-inner--board">
+                  <svg viewBox="0 0 60 180" fill="none">
+                    <rect x="8" y="10" width="44" height="160" rx="22" fill="#1a0f00" stroke="#D4960A" stroke-width="2"/>
+                    <rect x="14" y="30" width="32" height="120" rx="4" fill="#211400" stroke="#D4960A" stroke-width="1" stroke-dasharray="3 3"/>
+                    <text x="30" y="93" text-anchor="middle" fill="#D4960A" font-size="6" font-family="Black Ops One, sans-serif" letter-spacing="0.5">AMBER</text>
+                    <text x="30" y="103" text-anchor="middle" fill="#D4960A" font-size="5" font-family="Black Ops One, sans-serif" letter-spacing="0.5">DROP 01</text>
+                    <circle cx="30" cy="24" r="5" fill="#211400" stroke="#D4960A" stroke-width="1"/>
+                    <circle cx="30" cy="156" r="5" fill="#211400" stroke="#D4960A" stroke-width="1"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="merch__info">
+                <h4>Amber Drop — Drop 01</h4>
+                <p>Amber colourway, collector's item</p>
+                <span class="merch__price">₱28</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="merch__footer">
+        <p>All merch is limited. No restocks. Get it while it's live.</p>
+        <a href="#book" class="btn btn--primary">Custom Order Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__image">
+        <div class="about__mascot-wrap">
+          <img src="mascot.jpg" alt="Hunthreads mascot" />
+        </div>
+        <div class="about__stat-block">
+          <div class="about__stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Tattoos Done</span>
+          </div>
+          <div class="about__stat">
+            <span class="stat-num">1K+</span>
+            <span class="stat-label">Clients Served</span>
+          </div>
+          <div class="about__stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Disciplines</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">BUILT DIFFERENT.<br>RUN DIFFERENT.</h2>
+        <p>Hunthreads started as a simple idea — what if the best tattoo studio, the sharpest barber, and the most authentic streetwear brand were all under one roof?</p>
+        <p>We're not a chain. We're not a franchise. We're a crew of artists and barbers who care about the craft. Every client leaves looking and feeling like themselves — just sharper.</p>
+        <p>The mascot says it all: sitting back, clippers in hand, doing exactly what we love. That energy runs through everything we make, cut, and ink.</p>
+        <div class="about__values">
+          <div class="about__value">
+            <span class="about__value-icon">✦</span>
+            <div>
+              <h4>No Shortcuts</h4>
+              <p>Every tattoo is drawn from scratch. Every cut is dialled in.</p>
+            </div>
+          </div>
+          <div class="about__value">
+            <span class="about__value-icon">✦</span>
+            <div>
+              <h4>Community First</h4>
+              <p>We know our clients by name. That's the point.</p>
+            </div>
+          </div>
+          <div class="about__value">
+            <span class="about__value-icon">✦</span>
+            <div>
+              <h4>Culture Over Trend</h4>
+              <p>We don't chase hype. We set the standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / CONTACT -->
+  <section class="book" id="book">
+    <div class="book__bg-text" aria-hidden="true">BOOK</div>
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-label">Get In The Chair</span>
+        <h2 class="section-title">BOOK YOUR<br>SESSION</h2>
+      </div>
+      <div class="book__inner">
+        <div class="book__info">
+          <div class="book__info-item">
+            <h4>Location</h4>
+            <p><a href="https://maps.app.goo.gl/FyBsdwSZD4HLuNL48" target="_blank" rel="noopener">View on Google Maps →</a></p>
+          </div>
+          <div class="book__info-item">
+            <h4>Hours</h4>
+            <p>Monday – Sunday<br>10:00 AM – 7:00 PM</p>
+          </div>
+          <div class="book__info-item">
+            <h4>Contact</h4>
+            <p><a href="tel:+639563676153">0956 367 6153</a><br>DM us on Facebook or TikTok for fastest response.</p>
+          </div>
+          <div class="book__socials">
+            <a href="https://www.facebook.com/profile.php?id=61568755497348" target="_blank" rel="noopener" class="book__social">FB</a>
+            <a href="https://www.tiktok.com/@hunthreadscollection" target="_blank" rel="noopener" class="book__social">TK</a>
+          </div>
+        </div>
+        <form class="book__form" id="book-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="tattoo-consult">Tattoo — Free Consultation</option>
+              <option value="tattoo-session">Tattoo — Full Session</option>
+              <option value="barber-fade">Barber — Fade & Shape-up</option>
+              <option value="barber-beard">Barber — Beard Trim & Line</option>
+              <option value="barber-full">Barber — Full Package</option>
+              <option value="merch">Merch — Custom Order</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us more</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe what you're after — reference images, style, date preference..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Booking Request</button>
+          <p class="form-note">We'll get back to you within 24 hours to confirm your slot.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">HUNTHREADS</p>
+        <p class="footer__tagline">TATTOO × BARBER × MERCH</p>
+        <p class="footer__copy">&copy; 2024 Hunthreads. All rights reserved.</p>
+      </div>
+      <div class="footer__links">
+        <h5>Services</h5>
+        <a href="#services">Tattoo</a>
+        <a href="#services">Barber</a>
+        <a href="#merch">Merch</a>
+        <a href="#book">Book</a>
+      </div>
+      <div class="footer__links">
+        <h5>Studio</h5>
+        <a href="#about">About</a>
+        <a href="#work">Portfolio</a>
+        <a href="#book">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h5>Follow</h5>
+        <a href="https://www.facebook.com/profile.php?id=61568755497348" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.tiktok.com/@hunthreadscollection" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>No shortcuts. No compromises. Just the work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

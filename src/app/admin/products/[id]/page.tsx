@@ -2,6 +2,7 @@ import { redirect, notFound } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import { ImageUpload } from '../../components/ImageUpload'
+import { SubmitButton } from '../../components/SubmitButton'
 
 const CATEGORIES = ['Collectible', 'Apparel', 'Accessories', 'Digital Print']
 const BADGES = ['', 'NEW', 'COLLECTOR', 'COLLAB', 'SOLD OUT']
@@ -91,7 +92,7 @@ export default async function EditProductPage({
             </div>
           </div>
           <div>
-            <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>
+            <SubmitButton />
           </div>
         </form>
       </div>

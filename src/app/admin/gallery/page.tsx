@@ -1,4 +1,5 @@
 import { getGallery } from '@/lib/db'
+import { DeleteButton } from '../components/DeleteButton'
 
 export default async function GalleryAdmin() {
   const items = await getGallery()
@@ -59,7 +60,7 @@ function DeleteGalleryButton({ id }: { id: string }) {
   }
   return (
     <form action={deleteItem}>
-      <button type="submit" className="ht-btn ht-btn--danger ht-btn--sm">Del</button>
+      <DeleteButton message="Delete this gallery image? This cannot be undone." />
     </form>
   )
 }

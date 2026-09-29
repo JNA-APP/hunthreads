@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getShopPage } from '@/lib/db'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { SubmitButton } from '../components/SubmitButton'
 
 export default async function ShopAdmin({
   searchParams,
@@ -53,7 +54,7 @@ export default async function ShopAdmin({
             <input id="footer_note" name="footer_note" className="ht-input" defaultValue={d.footer_note ?? ''} />
           </div>
           <div>
-            <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>
+            <SubmitButton />
           </div>
         </form>
       </div>

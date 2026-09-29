@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import { ImageUpload } from '../../components/ImageUpload'
+import { SubmitButton } from '../../components/SubmitButton'
 
 export default function NewBtsPage() {
   async function create(formData: FormData) {
@@ -71,7 +72,7 @@ function BtsForm({
           </div>
         </div>
         <div>
-          <button type="submit" className="ht-btn ht-btn--primary">Save Photo</button>
+          <SubmitButton label="Save Photo" loadingLabel="Saving..." />
         </div>
       </form>
     </div>

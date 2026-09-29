@@ -3,6 +3,7 @@ import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 
 import { ImageUpload } from '../../components/ImageUpload'
+import { SubmitButton } from '../../components/SubmitButton'
 
 const CATEGORIES = ['Collectible', 'Apparel', 'Accessories', 'Digital Print']
 const BADGES = ['', 'NEW', 'COLLECTOR', 'COLLAB', 'SOLD OUT']
@@ -103,7 +104,7 @@ function ProductForm({
           </div>
         </div>
         <div>
-          <button type="submit" className="ht-btn ht-btn--primary">Save Product</button>
+          <SubmitButton label="Save Product" loadingLabel="Saving..." />
         </div>
       </form>
     </div>

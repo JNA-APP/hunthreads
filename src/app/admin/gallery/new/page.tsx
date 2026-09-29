@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import { ImageUpload } from '../../components/ImageUpload'
+import { SubmitButton } from '../../components/SubmitButton'
 
 export default function NewGalleryPage() {
   async function create(formData: FormData) {
@@ -84,7 +85,7 @@ function GalleryForm({
           </div>
         </div>
         <div>
-          <button type="submit" className="ht-btn ht-btn--primary">Save Image</button>
+          <SubmitButton label="Save Image" loadingLabel="Saving..." />
         </div>
       </form>
     </div>

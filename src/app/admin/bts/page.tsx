@@ -1,4 +1,5 @@
 import { getBts } from '@/lib/db'
+import { DeleteButton } from '../components/DeleteButton'
 
 export default async function BtsAdmin() {
   const items = await getBts()
@@ -59,7 +60,7 @@ function DeleteBtsButton({ id }: { id: string }) {
   }
   return (
     <form action={deleteItem}>
-      <button type="submit" className="ht-btn ht-btn--danger ht-btn--sm">Del</button>
+      <DeleteButton message="Delete this BTS photo? This cannot be undone." />
     </form>
   )
 }

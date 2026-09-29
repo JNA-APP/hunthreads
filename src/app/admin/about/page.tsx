@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getAbout } from '@/lib/db'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { SubmitButton } from '../components/SubmitButton'
 
 export default async function AboutAdmin({
   searchParams,
@@ -112,7 +113,7 @@ export default async function AboutAdmin({
         </div>
 
         <div>
-          <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>
+          <SubmitButton />
         </div>
       </form>
     </>

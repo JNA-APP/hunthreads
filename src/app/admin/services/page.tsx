@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getServices } from '@/lib/db'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { SubmitButton } from '../components/SubmitButton'
 
 export default async function ServicesAdmin({
   searchParams,
@@ -143,7 +144,7 @@ export default async function ServicesAdmin({
         </div>
 
         <div>
-          <button type="submit" className="ht-btn ht-btn--primary">Save All Changes</button>
+          <SubmitButton label="Save All Changes" />
         </div>
       </form>
     </>

@@ -3,6 +3,7 @@ import { getHero } from '@/lib/db'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import { ImageUpload } from '../components/ImageUpload'
+import { SubmitButton } from '../components/SubmitButton'
 
 export default async function HeroAdmin({
   searchParams,
@@ -53,7 +54,7 @@ export default async function HeroAdmin({
             <ImageUpload name="mascot_src" defaultValue={hero.mascot_src} />
           </div>
           <div>
-            <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>
+            <SubmitButton />
           </div>
         </form>
       </div>

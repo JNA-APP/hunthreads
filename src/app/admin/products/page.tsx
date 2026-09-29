@@ -1,4 +1,5 @@
 import { getProducts } from '@/lib/db'
+import { DeleteButton } from '../components/DeleteButton'
 
 export default async function ProductsAdmin() {
   const products = await getProducts()
@@ -60,7 +61,7 @@ function DeleteProductButton({ id }: { id: string }) {
   }
   return (
     <form action={deleteProduct}>
-      <button type="submit" className="ht-btn ht-btn--danger ht-btn--sm">Del</button>
+      <DeleteButton message="Delete this product? This cannot be undone." />
     </form>
   )
 }

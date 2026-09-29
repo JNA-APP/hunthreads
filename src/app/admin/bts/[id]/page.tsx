@@ -2,6 +2,7 @@ import { redirect, notFound } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import { ImageUpload } from '../../components/ImageUpload'
+import { SubmitButton } from '../../components/SubmitButton'
 
 export default async function EditBtsPage({
   params,
@@ -58,7 +59,7 @@ export default async function EditBtsPage({
             </div>
           </div>
           <div>
-            <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>
+            <SubmitButton />
           </div>
         </form>
       </div>

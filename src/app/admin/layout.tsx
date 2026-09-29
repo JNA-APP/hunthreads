@@ -1,6 +1,7 @@
 import './admin.css'
 import { createServerSupabase } from '@/lib/supabase'
 import { redirect } from 'next/navigation'
+import { LogoutButton } from './components/LogoutButton'
 
 async function signOut() {
   'use server'
@@ -44,7 +45,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="ht-sidebar__footer">
           <span className="ht-sidebar__user">{user.email}</span>
           <form action={signOut}>
-            <button className="ht-sidebar__logout">Sign out</button>
+            <LogoutButton />
           </form>
         </div>
       </aside>

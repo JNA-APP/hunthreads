@@ -76,11 +76,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-PH"
-      data-theme="light"
+      data-theme="dark"
       className={barlowCondensed.variable}
     >
       <body>
-        <Script id="theme-init" strategy="beforeInteractive">{`try{var t=localStorage.getItem('ht-theme')||'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}`}</Script>
+        <Script id="theme-init" strategy="beforeInteractive">{`try{var t=localStorage.getItem('ht-theme')||'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){}`}</Script>
         {children}
       </body>
     </html>

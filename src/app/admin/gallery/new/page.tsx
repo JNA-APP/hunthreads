@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { ImageUpload } from '../../components/ImageUpload'
 
 export default function NewGalleryPage() {
   async function create(formData: FormData) {
@@ -62,12 +63,8 @@ function GalleryForm({
           </div>
         </div>
         <div className="ht-field">
-          <label className="ht-label">Image Path or URL</label>
-          {defaults?.image_src && (
-            <img src={defaults.image_src as string} alt="" className="ht-upload-preview" />
-          )}
-          <input name="image_src" className="ht-input" placeholder="/01-traditional-flash/imageSrc.jpg"
-            defaultValue={(defaults?.image_src ?? '') as string} />
+          <label className="ht-label">Image</label>
+          <ImageUpload name="image_src" defaultValue={(defaults?.image_src ?? '') as string} />
         </div>
         <div className="ht-form-row">
           <div className="ht-field">

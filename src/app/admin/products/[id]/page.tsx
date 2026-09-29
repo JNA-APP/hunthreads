@@ -1,6 +1,7 @@
 import { redirect, notFound } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { ImageUpload } from '../../components/ImageUpload'
 
 const CATEGORIES = ['Collectible', 'Apparel', 'Accessories', 'Digital Print']
 const BADGES = ['', 'NEW', 'COLLECTOR', 'COLLAB', 'SOLD OUT']
@@ -79,11 +80,8 @@ export default async function EditProductPage({
           </div>
           <div className="ht-form-row">
             <div className="ht-field">
-              <label className="ht-label">Image Path or URL</label>
-              {p.image_src && (
-                <img src={p.image_src} alt={p.title} className="ht-upload-preview" />
-              )}
-              <input name="image_src" className="ht-input" defaultValue={p.image_src ?? ''} />
+              <label className="ht-label">Image</label>
+              <ImageUpload name="image_src" defaultValue={p.image_src ?? ''} />
             </div>
             <div className="ht-field">
               <label className="ht-label">Display Order</label>

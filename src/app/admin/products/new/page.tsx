@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
 
+import { ImageUpload } from '../../components/ImageUpload'
+
 const CATEGORIES = ['Collectible', 'Apparel', 'Accessories', 'Digital Print']
 const BADGES = ['', 'NEW', 'COLLECTOR', 'COLLAB', 'SOLD OUT']
 const BADGE_MODS = ['', '--cyan', '--amber', '--red']
@@ -90,10 +92,8 @@ function ProductForm({
         </div>
         <div className="ht-form-row">
           <div className="ht-field">
-            <label className="ht-label">Image Path or URL</label>
-            <input name="image_src" className="ht-input" placeholder="/01-product/imageSrc.jpg"
-              defaultValue={(defaults?.image_src ?? '') as string} />
-            <span className="ht-hint">Path in /public or a full URL from the image uploader</span>
+            <label className="ht-label">Image</label>
+            <ImageUpload name="image_src" defaultValue={(defaults?.image_src ?? '') as string} />
           </div>
           <div className="ht-field">
             <label className="ht-label">Display Order</label>

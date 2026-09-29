@@ -1,6 +1,7 @@
 import { redirect, notFound } from 'next/navigation'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { ImageUpload } from '../../components/ImageUpload'
 
 export default async function EditBtsPage({
   params,
@@ -39,11 +40,8 @@ export default async function EditBtsPage({
             <input name="label" className="ht-input" required defaultValue={item.label} />
           </div>
           <div className="ht-field">
-            <label className="ht-label">Image Path or URL</label>
-            {item.image_src && (
-              <img src={item.image_src} alt={item.label} className="ht-upload-preview" />
-            )}
-            <input name="image_src" className="ht-input" defaultValue={item.image_src ?? ''} />
+            <label className="ht-label">Image</label>
+            <ImageUpload name="image_src" defaultValue={item.image_src ?? ''} />
           </div>
           <div className="ht-form-row">
             <div className="ht-field">

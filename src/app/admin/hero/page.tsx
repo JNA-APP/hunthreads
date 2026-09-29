@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getHero } from '@/lib/db'
 import { adminDb } from '@/lib/supabase'
 import { revalidatePath } from 'next/cache'
+import { ImageUpload } from '../components/ImageUpload'
 
 export default async function HeroAdmin({
   searchParams,
@@ -48,9 +49,8 @@ export default async function HeroAdmin({
             <span className="ht-hint">Use × as the separator e.g. TATTOO × BARBER × MERCH</span>
           </div>
           <div className="ht-field">
-            <label className="ht-label" htmlFor="mascot_src">Mascot Image Path</label>
-            <input id="mascot_src" name="mascot_src" className="ht-input" defaultValue={hero.mascot_src} />
-            <span className="ht-hint">Path to the mascot image e.g. /mascot.png</span>
+            <label className="ht-label">Mascot Image</label>
+            <ImageUpload name="mascot_src" defaultValue={hero.mascot_src} />
           </div>
           <div>
             <button type="submit" className="ht-btn ht-btn--primary">Save Changes</button>

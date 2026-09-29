@@ -302,7 +302,7 @@ button { cursor: pointer; border: none; background: none; }
   align-items: center;
   justify-content: center;
   gap: clamp(24px, 5vw, 64px);
-  margin-bottom: clamp(16px, 3vh, 32px);
+  margin-bottom: 0;
 }
 
 .hero__logo-wrap {
@@ -333,6 +333,7 @@ button { cursor: pointer; border: none; background: none; }
   text-transform: uppercase;
   color: var(--white);
   text-align: center;
+  margin-top: -12px;
 }
 .hero__tagline .x { color: var(--cyan); }
 

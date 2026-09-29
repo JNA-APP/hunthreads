@@ -442,6 +442,19 @@ button { cursor: pointer; border: none; background: none; }
 }
 .service-card:last-child { border-right: none; }
 
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  background: url('/mascot-light.png') center/contain no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .service-card::after {
   content: '';
   position: absolute;
@@ -471,6 +484,8 @@ button { cursor: pointer; border: none; background: none; }
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
 }
 
 .service-card__num {
@@ -494,6 +509,8 @@ button { cursor: pointer; border: none; background: none; }
 .service-card--amber .service-card__icon { color: #EBB800; }
 
 .service-card__title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-heading), 'Barlow Condensed', sans-serif;
   font-weight: 900;
   font-size: clamp(40px, 4.5vw, 64px);

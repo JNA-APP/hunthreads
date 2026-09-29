@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { reader } from '@/lib/keystatic'
+import { getProducts } from '@/lib/db'
 
 const CATEGORIES = ['Collectible', 'Apparel', 'Accessories', 'Digital Print'] as const
 
 export default async function Merch() {
-  const all = await reader.collections.products.all()
+  const all = await getProducts()
 
   const preview = CATEGORIES
-    .map(cat => all.find(({ entry }) => entry.category === cat))
+    .map(cat => all.find(p => p.category === cat))
     .filter(Boolean) as typeof all
 
   return (
@@ -34,8 +34,8 @@ export default async function Merch() {
             </div>
 
             <div className="merch__row merch__row--4">
-              {preview.map(({ slug, entry: p }) => (
-                <div key={slug} className="merch__card">
+              {preview.map(p => (
+                <div key={p.slug} className="merch__card">
                   <div className="merch__img merch__img--photo" style={{ position: 'relative' }}>
                     {p.badge && (
                       <span className={`merch__badge${p.badgeMod ? ' merch__badge' + p.badgeMod : ''}`}>

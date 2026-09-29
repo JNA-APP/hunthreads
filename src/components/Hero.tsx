@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { reader } from '@/lib/keystatic'
+import { getHero } from '@/lib/db'
 
 export default async function Hero() {
-  const data = await reader.singletons.hero.read()
+  const data = await getHero()
 
-  const eyebrow  = data?.eyebrow  ?? 'EST. 2024'
-  const tagline  = data?.tagline  ?? 'TATTOO × BARBER × MERCH'
-  const mascotSrc = data?.mascotSrc || '/mascot.png'
+  const eyebrow   = data.eyebrow
+  const tagline   = data.tagline
+  const mascotSrc = data.mascot_src || '/mascot.png'
 
-  const taglineParts = tagline.split('×').map(s => s.trim())
+  const taglineParts = tagline.split('×').map((s: string) => s.trim())
 
   return (
     <section className="hero" id="home">
@@ -22,7 +22,7 @@ export default async function Hero() {
         </div>
 
         <p className="hero__tagline">
-          {taglineParts.map((part, i) => (
+          {taglineParts.map((part: string, i: number) => (
             <span key={i}>
               {part}
               {i < taglineParts.length - 1 && <span className="x"> × </span>}

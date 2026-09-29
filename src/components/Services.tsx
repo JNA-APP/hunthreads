@@ -1,17 +1,17 @@
-import { reader } from '@/lib/keystatic'
+import { getServices } from '@/lib/db'
 
 export default async function Services() {
-  const data = await reader.singletons.services.read()
+  const data = await getServices()
 
   const cards = [
     {
       num: '01',
       colorMod: 'red',
-      title:     data?.tattooTitle     ?? 'Tattoo',
-      desc:      data?.tattooDesc      ?? '',
-      list:      data?.tattooList      ?? [],
-      linkLabel: data?.tattooLinkLabel ?? 'Book Consultation',
-      linkHref:  data?.tattooLinkHref  ?? '#book',
+      title:     data.tattoo_title     ?? 'Tattoo',
+      desc:      data.tattoo_desc      ?? '',
+      list:      data.tattoo_list      ?? [],
+      linkLabel: data.tattoo_link_label ?? 'Book Consultation',
+      linkHref:  data.tattoo_link_href  ?? '#book',
       icon: (
         <svg viewBox="0 0 64 64" fill="none">
           <path d="M8 56L28 20l8 8L8 56z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
@@ -24,11 +24,11 @@ export default async function Services() {
     {
       num: '02',
       colorMod: 'cyan',
-      title:     data?.barberTitle     ?? 'Barber',
-      desc:      data?.barberDesc      ?? '',
-      list:      data?.barberList      ?? [],
-      linkLabel: data?.barberLinkLabel ?? 'Book Your Chair',
-      linkHref:  data?.barberLinkHref  ?? '#book',
+      title:     data.barber_title     ?? 'Barber',
+      desc:      data.barber_desc      ?? '',
+      list:      data.barber_list      ?? [],
+      linkLabel: data.barber_link_label ?? 'Book Your Chair',
+      linkHref:  data.barber_link_href  ?? '#book',
       icon: (
         <svg viewBox="0 0 64 64" fill="none">
           <path d="M20 12c0 0 4 4 4 10s-4 10-4 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -42,11 +42,11 @@ export default async function Services() {
     {
       num: '03',
       colorMod: 'amber',
-      title:     data?.merchTitle     ?? 'Merch',
-      desc:      data?.merchDesc      ?? '',
-      list:      data?.merchList      ?? [],
-      linkLabel: data?.merchLinkLabel ?? 'Shop Now',
-      linkHref:  data?.merchLinkHref  ?? '#merch',
+      title:     data.merch_title     ?? 'Merch',
+      desc:      data.merch_desc      ?? '',
+      list:      data.merch_list      ?? [],
+      linkLabel: data.merch_link_label ?? 'Shop Now',
+      linkHref:  data.merch_link_href  ?? '#merch',
       icon: (
         <svg viewBox="0 0 64 64" fill="none">
           <path d="M20 8L12 20v36h40V20L44 8H20z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
@@ -76,7 +76,7 @@ export default async function Services() {
             <div className="service-card__rule" />
             <p className="service-card__desc">{card.desc}</p>
             <ul className="service-card__list">
-              {card.list.map(item => <li key={item}>{item}</li>)}
+              {(card.list as string[]).map((item: string) => <li key={item}>{item}</li>)}
             </ul>
             <a href={card.linkHref} className="service-card__link">
               <span>{card.linkLabel}</span>

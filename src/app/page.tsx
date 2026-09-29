@@ -8,7 +8,7 @@ import BehindScenes from '@/components/BehindScenes'
 import About from '@/components/About'
 import Book from '@/components/Book'
 import Footer from '@/components/Footer'
-import { reader } from '@/lib/keystatic'
+import { getGallery, getBts } from '@/lib/db'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -59,31 +59,10 @@ const jsonLd = {
 }
 
 export default async function Home() {
-  const [galleryRaw, btsRaw] = await Promise.all([
-    reader.collections.gallery.all(),
-    reader.collections.bts.all(),
+  const [galleryItems, btsPhotos] = await Promise.all([
+    getGallery(),
+    getBts(),
   ])
-
-  const galleryItems = galleryRaw
-    .map(({ slug, entry }) => ({
-      slug,
-      order:            entry.order ?? 99,
-      label:            entry.label ?? slug,
-      category:         (entry.category ?? 'tattoo') as 'tattoo' | 'barber',
-      imageSrc:         entry.imageSrc ?? '',
-      placeholderStyle: entry.placeholderStyle ?? '',
-    }))
-    .sort((a, b) => a.order - b.order)
-
-  const btsPhotos = btsRaw
-    .map(({ slug, entry }) => ({
-      slug,
-      order:    entry.order ?? 99,
-      label:    entry.label ?? slug,
-      imageSrc: entry.imageSrc ?? '',
-      featured: entry.featured ?? false,
-    }))
-    .sort((a, b) => a.order - b.order)
 
   return (
     <>

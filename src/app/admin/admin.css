@@ -1,0 +1,436 @@
+/* ── Hunthreads Admin Panel ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ht-admin {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #e8e8e8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ht-admin--auth {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ──────────────────────────────────────────── */
+.ht-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #111;
+  border-right: 1px solid #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.ht-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.ht-sidebar__logo {
+  width: 32px;
+  height: 32px;
+  background: #2BBECB;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.ht-sidebar__name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+}
+
+.ht-sidebar__nav {
+  flex: 1;
+  padding: 12px 0;
+}
+
+.ht-sidebar__section {
+  padding: 16px 16px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.ht-sidebar__link {
+  display: block;
+  padding: 8px 16px;
+  color: #aaa;
+  text-decoration: none;
+  border-radius: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.ht-sidebar__link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+.ht-sidebar__footer {
+  padding: 16px;
+  border-top: 1px solid #1e1e1e;
+}
+
+.ht-sidebar__user {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.ht-sidebar__logout {
+  background: none;
+  border: 1px solid #333;
+  color: #888;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.ht-sidebar__logout:hover {
+  border-color: #e85555;
+  color: #e85555;
+}
+
+/* ── Main content ─────────────────────────────────────── */
+.ht-main {
+  flex: 1;
+  padding: 32px;
+  min-width: 0;
+  max-width: 960px;
+}
+
+/* ── Page header ─────────────────────────────────────── */
+.ht-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 12px;
+}
+
+.ht-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Cards ───────────────────────────────────────────── */
+.ht-card {
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.ht-card__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* ── Dashboard stat grid ─────────────────────────────── */
+.ht-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.ht-stat {
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.ht-stat__num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2BBECB;
+  line-height: 1;
+}
+
+.ht-stat__label {
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ── Quick links ─────────────────────────────────────── */
+.ht-quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.ht-quick-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.ht-quick-link:hover {
+  border-color: #2BBECB;
+  color: #2BBECB;
+}
+
+/* ── Forms ───────────────────────────────────────────── */
+.ht-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ht-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ht-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ht-hint {
+  font-size: 11px;
+  color: #444;
+  margin-top: 2px;
+}
+
+.ht-input,
+.ht-textarea,
+.ht-select {
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #e8e8e8;
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.ht-input:focus,
+.ht-textarea:focus,
+.ht-select:focus {
+  border-color: #2BBECB;
+}
+
+.ht-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.ht-input--small {
+  max-width: 120px;
+}
+
+.ht-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.ht-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.ht-btn:hover { opacity: 0.85; }
+
+.ht-btn--primary {
+  background: #2BBECB;
+  color: #000;
+}
+
+.ht-btn--ghost {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+}
+
+.ht-btn--ghost:hover {
+  border-color: #555;
+  color: #ccc;
+  opacity: 1;
+}
+
+.ht-btn--danger {
+  background: transparent;
+  border: 1px solid #e85555;
+  color: #e85555;
+}
+
+.ht-btn--sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* ── Success / error banners ─────────────────────────── */
+.ht-banner {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.ht-banner--success { background: rgba(43,190,203,0.15); color: #2BBECB; border: 1px solid rgba(43,190,203,0.3); }
+.ht-banner--error   { background: rgba(232,85,85,0.15);  color: #e85555; border: 1px solid rgba(232,85,85,0.3); }
+
+/* ── Collection table ─────────────────────────────────── */
+.ht-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ht-table th,
+.ht-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1a1a1a;
+  vertical-align: middle;
+}
+
+.ht-table th {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.ht-table td { font-size: 13px; color: #aaa; }
+.ht-table td:first-child { color: #e8e8e8; }
+
+.ht-table tr:last-child td { border-bottom: none; }
+
+.ht-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #1a1a1a;
+}
+
+.ht-table__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ── Image upload ─────────────────────────────────────── */
+.ht-upload-preview {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #1a1a1a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ── Login page ─────────────────────────────────────────── */
+.ht-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.ht-login__card {
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.ht-login__logo {
+  width: 40px;
+  height: 40px;
+  background: #2BBECB;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.ht-login__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.ht-login__sub {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 28px;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ht-admin--auth { flex-direction: column; }
+  .ht-sidebar { width: 100%; min-height: auto; height: auto; position: relative; }
+  .ht-main { padding: 20px; }
+  .ht-form-row { grid-template-columns: 1fr; }
+}

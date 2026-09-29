@@ -1,22 +1,22 @@
-import { reader } from '@/lib/keystatic'
+import { getAbout } from '@/lib/db'
 
 export default async function About() {
-  const data = await reader.singletons.about.read()
+  const data = await getAbout()
 
   const stats = [
-    { num: data?.stat1Num ?? '500+', label: data?.stat1Label ?? 'Tattoos Done' },
-    { num: data?.stat2Num ?? '1K+',  label: data?.stat2Label ?? 'Clients Served' },
-    { num: data?.stat3Num ?? '3',    label: data?.stat3Label ?? 'Disciplines' },
+    { num: data.stat1_num, label: data.stat1_label },
+    { num: data.stat2_num, label: data.stat2_label },
+    { num: data.stat3_num, label: data.stat3_label },
   ]
 
   const values = [
-    { heading: data?.value1Heading ?? 'No Shortcuts',     body: data?.value1Body ?? 'Every tattoo is drawn from scratch. Every cut is dialled in.' },
-    { heading: data?.value2Heading ?? 'Community First',  body: data?.value2Body ?? "We know our clients by name. That's the point." },
-    { heading: data?.value3Heading ?? 'Culture Over Trend', body: data?.value3Body ?? "We don't chase hype. We set the standard." },
+    { heading: data.value1_heading, body: data.value1_body },
+    { heading: data.value2_heading, body: data.value2_body },
+    { heading: data.value3_heading, body: data.value3_body },
   ]
 
-  const storyP1 = data?.storyP1 ?? 'Hunthreads started as a simple idea — what if the best tattoo studio, the sharpest barber, and the most authentic streetwear brand in Central Luzon were all under one roof?'
-  const storyP2 = data?.storyP2 ?? "We're not a chain. We're not a franchise. We're a crew of artists and barbers based in Central Luzon who care about the craft. Every client walks out looking and feeling like themselves — just sharper."
+  const storyP1 = data.story_p1
+  const storyP2 = data.story_p2
 
   return (
     <section className="about" id="about">

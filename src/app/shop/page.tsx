@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ShopGrid from '@/components/ShopGrid'
-import { reader } from '@/lib/keystatic'
+import { getProducts, getShopPage } from '@/lib/db'
 
 export const metadata: Metadata = {
   title: 'Shop — HUNTHREADS',
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 
 export default async function ShopPage() {
   const [all, shopData] = await Promise.all([
-    reader.collections.products.all(),
-    reader.singletons.shopPage.read(),
+    getProducts(),
+    getShopPage(),
   ])
 
-  const eyebrow    = shopData?.eyebrow    ?? 'The Collection'
-  const title      = shopData?.title      ?? 'THE FULL DROP'
-  const sub        = shopData?.sub        ?? 'Limited runs. No restocks. Everything here ships while it lasts.'
-  const footerNote = shopData?.footerNote ?? 'All pieces are limited. Once sold, they don\'t come back.'
+  const eyebrow    = shopData.eyebrow
+  const title      = shopData.title
+  const sub        = shopData.sub
+  const footerNote = shopData.footer_note
 
   return (
     <>
@@ -37,15 +37,15 @@ export default async function ShopPage() {
         </div>
 
         <div className="container">
-          <ShopGrid products={all.map(({ slug, entry: p }) => ({
-            slug,
+          <ShopGrid products={all.map(p => ({
+            slug:     p.slug,
             title:    p.title,
-            desc:     p.desc     ?? '',
-            detail:   p.detail   ?? '',
-            category: p.category ?? '',
-            badge:    p.badge    ?? '',
-            badgeMod: p.badgeMod ?? '',
-            imageSrc: p.imageSrc ?? '',
+            desc:     p.desc,
+            detail:   p.detail,
+            category: p.category,
+            badge:    p.badge,
+            badgeMod: p.badgeMod,
+            imageSrc: p.imageSrc,
           }))} />
 
           <div className="shop__footer-note">

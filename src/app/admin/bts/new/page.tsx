@@ -35,7 +35,7 @@ export default function NewBtsPage() {
   )
 }
 
-export function BtsForm({
+function BtsForm({
   action,
   defaults,
 }: {

@@ -36,7 +36,7 @@ export default function NewGalleryPage() {
   )
 }
 
-export function GalleryForm({
+function GalleryForm({
   action,
   defaults,
 }: {

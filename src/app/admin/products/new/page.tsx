@@ -44,7 +44,7 @@ export default function NewProductPage() {
   )
 }
 
-export function ProductForm({
+function ProductForm({
   action,
   defaults,
 }: {
